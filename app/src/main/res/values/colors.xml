@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="emoji_divider">#1F000000</color>
+    <color name="qiscus_light_grey">#D8D8D8</color>
+    <color name="qiscus_secondary_text">#979797</color>
+    <color name="qiscus_red">#d32f2f</color>
+    <color name="qiscus_green">#94CA62</color>
+
+    <color name="pending_message">#757575</color>
+    <color name="read_message">#94CA62</color>
+    <color name="dateBackground">#E0E0E0</color>
+    <color name="qiscus_white_grey">#FAFAFA</color>
+</resources>

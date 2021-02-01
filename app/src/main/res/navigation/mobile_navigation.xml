@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.devfutech.chatqiscus.ui.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.devfutech.chatqiscus.ui.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.devfutech.chatqiscus.ui.contact.ContactFragment"
+        android:label="contact_fragment"
+        tools:layout="@layout/contact_fragment" >
+        <action
+            android:id="@+id/action_contactFragment_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_contactFragment_to_groupChatCreationFragment"
+            app:destination="@id/groupChatCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatRoomFragment"
+        android:name="com.devfutech.chatqiscus.ui.chatroom.ChatRoomFragment"
+        android:label="chat_room_fragment"
+        tools:layout="@layout/chat_room_fragment" >
+        <argument
+            android:name="qiscusChatRoom"
+            app:argType="com.qiscus.sdk.chat.core.data.model.QiscusChatRoom"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupChatCreationFragment"
+        android:name="com.devfutech.chatqiscus.ui.groupchatcreation.GroupChatCreationFragment"
+        android:label="group_chat_creation_fragment"
+        tools:layout="@layout/group_chat_creation_fragment" >
+        <argument
+            android:name="participants"
+            app:argType="com.qiscus.sdk.chat.core.data.model.QiscusAccount[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_groupChatCreationFragment_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
