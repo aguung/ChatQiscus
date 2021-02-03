@@ -22,6 +22,10 @@ class LoginViewModel @Inject constructor(private val userRepository: UserReposit
     val currentUser: LiveData<ResultOf<QiscusAccount?>>
         get() = _currentUser
 
+    init {
+        start()
+    }
+
     fun login(
         email: String?,
         password: String?,
@@ -44,7 +48,7 @@ class LoginViewModel @Inject constructor(private val userRepository: UserReposit
             })
     }
 
-    fun start() {
+    private fun start() {
         _currentUser.postValue(ResultOf.Progress(true))
         userRepository.getCurrentUser(onSuccess = object : Action<QiscusAccount?> {
             override fun call(t: QiscusAccount?) {

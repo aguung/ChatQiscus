@@ -60,7 +60,6 @@ class HomeFragment : BaseFragment(), ChatRoomAdapter.OnItemClickListener {
     }
 
     private fun setupAction() {
-        viewModels.loadChatRooms()
         binding.apply {
             createChat.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_contactFragment)

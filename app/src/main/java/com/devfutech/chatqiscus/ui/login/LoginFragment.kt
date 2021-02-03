@@ -71,7 +71,6 @@ class LoginFragment : BaseFragment() {
     }
 
     private fun setupAction() {
-        viewModels.start()
         binding.apply {
             btnLogin.setOnClickListener {
                 val validation = arrayOfNulls<Boolean>(3)

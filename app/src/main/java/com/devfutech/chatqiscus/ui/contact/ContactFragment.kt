@@ -54,7 +54,6 @@ class ContactFragment : BaseFragment(), ContactAdapter.OnItemClickListener {
     }
 
     private fun setupAction() {
-        viewModels.loadContacts(page = 0, limit = 100, query = null)
         binding.apply {
             back.back()
             imgNext.setOnClickListener {

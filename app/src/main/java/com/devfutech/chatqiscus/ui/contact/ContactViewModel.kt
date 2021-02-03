@@ -27,9 +27,13 @@ class ContactViewModel @Inject constructor(
     val room: LiveData<Event<ResultOf<QiscusChatRoom?>>>
         get() = _room
 
-    fun loadContacts(page: Long, limit: Int, query: String?) {
+    init {
+        loadContacts()
+    }
+
+    private fun loadContacts() {
         _contact.postValue(ResultOf.Progress(true))
-        userRepository.getUsers(page = page, limit = limit, query = query, onSuccess = object :
+        userRepository.getUsers(page = 0, limit = 100, query = null, onSuccess = object :
             Action<List<QiscusAccount?>?> {
             override fun call(t: List<QiscusAccount?>?) {
                 _contact.postValue(ResultOf.Success(t))
