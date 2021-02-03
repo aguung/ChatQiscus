@@ -18,11 +18,8 @@ class HomeViewModel @Inject constructor(private val chatRoomRepository: ChatRoom
     val room: LiveData<ResultOf<List<QiscusChatRoom?>?>>
         get() = _room
 
-    init {
-        loadChatRooms()
-    }
 
-    private fun loadChatRooms() {
+    fun loadChatRooms() {
         _room.postValue(ResultOf.Progress(true))
         chatRoomRepository.getChatRooms(onSuccess = object :
             Action<List<QiscusChatRoom?>?> {
